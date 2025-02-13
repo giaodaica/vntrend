@@ -53,7 +53,7 @@
 }
 
 .accent-background {
-  --background-color: #008374;
+  --background-color: #07a3b2;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --accent-color: #ffffff;
@@ -231,7 +231,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #008374;
+  --background-color: #07a3b2;
   --heading-color: #ffffff;
   color: var(--default-color);
   transition: all 0.5s;

@@ -11,6 +11,10 @@ class ComposerStaticInit1c4ca15c49837cbc40de7b9cbe565a5a
         array (
             'eftec\\bladeone\\' => 15,
         ),
+        'R' => 
+        array (
+            'RobThree\\Auth\\' => 14,
+        ),
         'P' => 
         array (
             'Phroute\\Phroute\\' => 16,
@@ -25,6 +29,10 @@ class ComposerStaticInit1c4ca15c49837cbc40de7b9cbe565a5a
         'eftec\\bladeone\\' => 
         array (
             0 => __DIR__ . '/..' . '/eftec/bladeone/lib',
+        ),
+        'RobThree\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/robthree/twofactorauth/lib',
         ),
         'Phroute\\Phroute\\' => 
         array (

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/app/helpers/handler.php';
+require_once __DIR__ .'/commons/env.php';
 use App\Controllers\HomeController;
 use Phroute\Phroute\RouteCollector;
 
@@ -13,6 +14,13 @@ $router->get('/',[HomeController::class,'index']);
 $router->get('/babythree',[HomeController::class,'shop']);
 
 $router->get('/tintuc',[HomeController::class,'content']);
+
+$router->get('/login_admin',[HomeController::class,'login_admin']);
+
+$router->POST('check_login_admin',[HomeController::class,'check_admin']);
+
+
+
 
 
 

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'eftec\\bladeone\\' => array($vendorDir . '/eftec/bladeone/lib'),
+    'RobThree\\Auth\\' => array($vendorDir . '/robthree/twofactorauth/lib'),
     'Phroute\\Phroute\\' => array($vendorDir . '/phroute/phroute/src/Phroute'),
     'App\\' => array($baseDir . '/app'),
 );

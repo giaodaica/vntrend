@@ -10,7 +10,8 @@
     ],
     "require": {
         "phroute/phroute": "^2.2",
-        "eftec/bladeone": "^4.17"
+        "eftec/bladeone": "^4.17",
+        "robthree/twofactorauth": "^3.0"
     },
     "autoload": {
         "psr-4":{

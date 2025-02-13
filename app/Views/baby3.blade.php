@@ -42,7 +42,7 @@ Cửa Hàng
 
                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item eyeocean">
                     <div class="portfolio-content h-100">
-                        <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/lekhe.png" class="img-fluid" alt="" ></a>
+                        <a href="assets/img/portfolio/lekhe.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/lekhe.png" class="img-fluid" alt="" ></a>
                         <div class="portfolio-info">
                             <h4><a href="portfolio-details.html" title="More Details">Mắt Nước</a></h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
