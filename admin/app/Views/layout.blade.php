@@ -733,7 +733,7 @@
                         <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Balance : <b>$5971.67</b></span></a>
                         <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-success-subtle text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
                         <a class="dropdown-item" href="auth-lockscreen-basic.html"><i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Lock screen</span></a>
-                        <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                        <a class="dropdown-item" href="auth-logout"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
                     </div>
                 </div>
             </div>
@@ -815,13 +815,25 @@
                     <div class="collapse menu-dropdown show" id="sidebarEcommerce"> <!-- Thêm lớp 'show' -->
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="./news" class="nav-link" data-key="t-products"> Danh Sách Tin </a>
+                                <a href="news" class="nav-link" data-key="t-products"> Danh Sách Tin </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./category" class="nav-link" data-key="t-product-Details"> Danh Mục Tin </a>
+                                <a href="category" class="nav-link" data-key="t-product-Details"> Danh Mục Tin </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./add_new" class="nav-link" data-key="t-create-product"> Thêm Mới Tin </a>
+                                <a href="add_new" class="nav-link" data-key="t-create-product"> Thêm Mới Tin </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="babythree" class="nav-link" data-key="t-orders">
+                                    Baby Three </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="add_category" class="nav-link" data-key="t-orders">
+                                    Thêm mới Danh Mục </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="add_category" class="nav-link" data-key="t-orders">
+                                    Thêm mới Danh Mục </a>
                             </li>
                             <li class="nav-item">
                                 <a href="add_category" class="nav-link" data-key="t-orders">

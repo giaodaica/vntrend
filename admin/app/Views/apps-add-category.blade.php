@@ -16,18 +16,14 @@
     </div>
     <!-- end page title -->
 
-    <form id="create-category-form" autocomplete="off" class="needs-validation" novalidate>
+    <form action="post-new-categories" method="post" id="create-category-form" autocomplete="off" class="needs-validation" novalidate>
         <div class="row">
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
                             <label class="form-label" for="category-name-input">Tên danh mục</label>
-                            <input type="text" class="form-control" id="category-name-input" placeholder="Nhập tên danh mục" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="category-description-input">Mô tả danh mục</label>
-                            <textarea class="form-control" id="category-description-input" placeholder="Nhập mô tả danh mục" rows="3"></textarea>
+                            <input type="text" class="form-control" id="category-name-input" placeholder="Nhập tên danh mục" required name="categories_post">
                         </div>
                     </div>
                 </div>
@@ -38,16 +34,13 @@
                 </div>
             </div>
             <!-- end col -->
-
+            </form>
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
                         <div>
-                            <label for="category-status-input" class="form-label">Trạng thái</label>
-                            <select class="form-select" id="category-status-input">
-                                <option value="Public" selected>Công khai</option>
-                                <option value="Hidden">Ẩn</option>
-                            </select>
+                            <label for="category-status-input" class="form-label">Danh Mục Hiện Tại</label>
+                            
                         </div>
                     </div>
                 </div>
@@ -56,7 +49,7 @@
             <!-- end col -->
         </div>
         <!-- end row -->
-    </form>
+  
 </div>
 
         <!-- container-fluid -->
