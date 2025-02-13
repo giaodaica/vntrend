@@ -12,6 +12,8 @@ $router->get('/',[HomeController::class,'index']);
 
 $router->get('/babythree',[HomeController::class,'shop']);
 
+$router->get('/tintuc',[HomeController::class,'content']);
+
 
 
 

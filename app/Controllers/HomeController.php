@@ -7,4 +7,7 @@
         public function shop()  {
             return view('baby3');
         }
+        public function content()  {
+            return view('content');
+        }
     }

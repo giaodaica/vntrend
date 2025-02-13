@@ -1,7 +1,20 @@
 <?php $_shouldextend[1]=1; ?>
+<link href="assets/img/portfolio/shop-icon.png" rel="icon">
+<?php $this->startSection('namepage'); ?>
+Baby Three
+<?php $this->stopSection(); ?>
+
 <?php $this->startSection('title'); ?>
 Cửa Hàng
 <?php $this->stopSection(); ?>
+<?php $this->startSection('title-content'); ?>
+
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('content-text'); ?>
+
+<?php $this->stopSection(); ?>
+
 <?php $this->startSection('content'); ?>
 <!-- Portfolio Section -->
 <section id="portfolio" class="portfolio section">

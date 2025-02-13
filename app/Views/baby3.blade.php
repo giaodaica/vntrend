@@ -1,7 +1,20 @@
 @extends('layout')
+<link href="assets/img/portfolio/shop-icon.png" rel="icon">
+@section('namepage')
+Baby Three
+@endsection
+
 @section('title')
 Cửa Hàng
 @endsection
+@section('title-content')
+
+@endsection
+
+@section('content-text')
+
+@endsection
+
 @section('content')
 <!-- Portfolio Section -->
 <section id="portfolio" class="portfolio section">

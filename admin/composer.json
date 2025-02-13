@@ -1,0 +1,20 @@
+{
+    "name": "admin/admin",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "giaodaica",
+            "email": "trunghieu042000@gmail.com"
+        }
+    ],
+    "require": {
+        "phroute/phroute": "^2.2",
+        "eftec/bladeone": "^4.17"
+    },
+   "autoload": {
+    "psr-4": {
+        "Admin\\App\\": "app/"
+    }
+}
+
+}
