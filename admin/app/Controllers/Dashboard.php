@@ -17,10 +17,13 @@ class Dashboard{
         return view('apps-add-category');
     }
     public function babythree(){
-        return view('apps-baby-three');
+        return view('baby3.apps-baby-three');
     }
     public function sucsess_new_categories(){
         echo "ok";
+    }
+    public function sucsess_new_post(){
+        // echo "1";
     }
     public function logout(){
         session_start();

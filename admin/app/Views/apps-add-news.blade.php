@@ -25,20 +25,25 @@
              </div>
              <!-- end page title -->
 
-             <form id="createproduct-form" autocomplete="off" class="needs-validation" novalidate>
+             <form action="sucsess-new-post" method="post" id="createproduct-form" autocomplete="off" class="needs-validation" novalidate>
                  <div class="row">
                      <div class="col-lg-8">
                          <div class="card">
                              <div class="card-body">
                                  <div class="mb-3">
-                                     <label class="form-label" for="product-title-input">Tiêu đề tin(h1) </label>
-                                     <input type="hidden" class="form-control" id="formAction" name="formAction" value="add">
-                                     <input type="text" class="form-control d-none" id="product-id-input">
-                                     <input type="text" class="form-control" id="product-title-input" value="" placeholder="Nhập tiêu đề tin" required>
+                                     <label class="form-label" for="product-title-input">Title(h1) </label>
+                                     <input type="text" class="form-control" id="product-title-input" value="" placeholder="Nhập tiêu đề tin" required name="posts_title_h1">
 
-                                     <label class="form-label" for="product-title-input">Tiêu đề tin(h3) </label>
-                                     <input type="hidden" class="form-control" id="formAction" name="formAction" value="add">
-                                     <input type="text" class="form-control" id="product-title-input" value="" placeholder="Nhập tiêu đề tin" required>
+                                     <label class="form-label" for="product-title-input">Title Top </label>
+                                     <input type="text" class="form-control" id="product-title-input" value="" placeholder="Nhập tiêu đề tin" required name="posts_title_top">
+
+                                     <label class="form-label" for="product-title-input">Title Mid </label>
+                                     <input type="text" class="form-control" id="product-title-input" value="" placeholder="Nhập tiêu đề tin" required name="posts_title_mid">
+
+                                     <label class="form-label" for="product-title-input">Title Bot </label>
+                                     <input type="text" class="form-control" id="product-title-input" value="" placeholder="Nhập tiêu đề tin" required name="posts_title_bot">
+
+                                     
                                  </div>
                              </div>
                          </div>
@@ -50,8 +55,8 @@
                              </div>
                              <div class="card-body">
                                  <div class="mb-4">
-                                     <h5 class="fs-14 mb-1">Product Image</h5>
-                                     <p class="text-muted">Add Product main Image.</p>
+                                     <h5 class="fs-14 mb-1">Product Image Top</h5>
+                                     <p class="text-muted">Add Product main Image Top</p>
                                      <div class="text-center">
                                          <div class="position-relative d-inline-block">
                                              <div class="position-absolute top-100 start-100 translate-middle">
@@ -62,7 +67,7 @@
                                                          </div>
                                                      </div>
                                                  </label>
-                                                 <input class="form-control d-none" value="" id="product-image-input" type="file" accept="image/png, image/gif, image/jpeg">
+                                                 <input class="form-control d-none" value="" id="product-image-input" type="file" accept="image/png, image/gif, image/jpeg" name="posts_image_top">
                                              </div>
                                              <div class="avatar-lg">
                                                  <div class="avatar-title bg-light rounded">
@@ -74,9 +79,55 @@
                                  </div>
 
                              </div>
+
+    <!-- start card image bot -->
+    <div class="card-body">
+                                 <div class="mb-4">
+                                     <h5 class="fs-14 mb-1">Product Image Mid</h5>
+                                     <p class="text-muted">Add Product main Image Mid</p>
+                                     <div class="text-center">
+                                         <div class="position-relative d-inline-block">
+                                             <div class="position-absolute top-100 start-100 translate-middle">
+                                                 <label for="product-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
+                                                     <div class="avatar-xs">
+                                                         <div class="avatar-title bg-light border rounded-circle text-muted cursor-pointer">
+                                                             <i class="ri-image-fill"></i>
+                                                         </div>
+                                                     </div>
+                                                 </label>
+                                                 <input class="form-control d-none" value="" id="product-image-input" type="file" accept="image/png, image/gif, image/jpeg" name="posts_image_mid">
+                                             </div>
+                                             <div class="avatar-lg">
+                                                 <div class="avatar-title bg-light rounded">
+                                                     <img src="" id="product-img" class="avatar-md h-auto" />
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+
+                             </div>
+     <!-- end card -->
+
                          </div>
                          <!-- end card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="">Content Top</label>
+                                    <textarea name="posts_content_top" id="" class="form-control"></textarea>
 
+                                    <label for="">Content Mid</label>
+                                    <textarea name="posts_content_mid" id="" class="form-control"></textarea>
+
+                                    <label for="">Content Mid SP</label>
+                                    <textarea name="posts_content_mid_sp" id="" class="form-control"></textarea>
+
+                                    <label for="">Content Bot</label>
+                                    <textarea name="posts_content_bot" id="" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
                          <div class="card">
                              <div class="card-header">
                                  <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
@@ -102,11 +153,19 @@
                                                      <label class="form-label" for="manufacturer-name-input">Tác giả</label>
                                                      <input type="text" class="form-control" id="manufacturer-name-input" placeholder="Enter manufacturer name">
                                                  </div>
+                                                 <div class="mb-3">
+                                                     <label class="form-label" for="manufacturer-name-input">Slug</label>
+                                                     <input type="text" class="form-control" id="manufacturer-name-input" placeholder="Enter manufacturer name" name="posts_slug">
+                                                 </div>
                                              </div>
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label class="form-label" for="manufacturer-brand-input">Thời gian</label>
-                                                     <input type="date" name="" id="" class="form-control">
+                                                     <label class="form-label" for="manufacturer-brand-input">Thời gian tạo</label>
+                                                     <input type="date" name="posts_create_at" id="" class="form-control">
+                                                 </div>
+                                                 <div class="mb-3">
+                                                     <label class="form-label" for="manufacturer-brand-input">Thời gian sửa</label>
+                                                     <input type="date" name="posts_update_at" id="" class="form-control">
                                                  </div>
                                              </div>
                                          </div>
@@ -162,9 +221,9 @@
 
                                  <div>
                                      <label for="choices-publish-visibility-input" class="form-label">Trạng thái</label>
-                                     <select class="form-select" id="choices-publish-visibility-input" data-choices data-choices-search-false>
-                                         <option value="Public" selected>Công Khai</option>
-                                         <option value="Hidden">Ẩn</option>
+                                     <select class="form-select" class="posts_status" id="choices-publish-visibility-input" data-choices data-choices-search-false>
+                                         <option value="1" selected>Công Khai</option>
+                                         <option value="0">Ẩn</option>
                                      </select>
                                  </div>
                              </div>

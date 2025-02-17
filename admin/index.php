@@ -3,6 +3,7 @@
 session_start();
 
 use Admin\App\Controllers\Dashboard;
+use Admin\App\Controllers\Shop_bb3;
 use Phroute\Phroute\RouteCollector;
 
 require_once __DIR__."/vendor/autoload.php";
@@ -23,6 +24,10 @@ $router->get('/new-categories',[Dashboard::class,'add_category']);
 $router->get('/babythree',[Dashboard::class,'babythree']);
 $router->get('/auth-logout',[Dashboard::class,'logout']);
 $router->POST('post-new-categories',[Dashboard::class,'sucsess_new_categories']);
+$router->POST('sucsess-new-post',[Dashboard::class,'sucsess_new_post']);
+$router->get('add_new_bb3',[Shop_bb3::class,'handerCreate']);
+$router->POST('sucsess-new-product-bb3',[Shop_bb3::class,'handerPostCreate']);
+
 
 
 try {

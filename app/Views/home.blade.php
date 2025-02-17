@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>VN TREND</title>
+  <title>Virals</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -61,7 +61,7 @@
         <a href="index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">VNTREND</h1>
+          <h1 class="sitename">Virals</h1>
           <span>.</span>
         </a>
 
@@ -72,7 +72,7 @@
             <!-- <li><a href="#services">Services</a></li> -->
             <!-- <li><a href="#portfolio">Portfolio</a></li> -->
             <!-- <li><a href="#team">Team</a></li> -->
-            <li><a href="tintuc">Tin Tức</a></li>
+            <!-- <li><a href="tintuc">Tin Tức</a></li> -->
             <li><a href="babythree">Baby Three</a></li>
 <!--             
             <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -900,7 +900,7 @@
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Impact</span>
+            <span class="sitename">Virals</span>
           </a>
           <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">

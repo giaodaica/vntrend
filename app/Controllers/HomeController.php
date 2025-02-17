@@ -1,6 +1,7 @@
 <?php
     namespace App\Controllers;
 
+use App\Models\Baby3;
 use App\Models\Users;
 
     class HomeController{
@@ -8,7 +9,10 @@ use App\Models\Users;
             return view('home');
         }
         public function shop()  {
-            return view('baby3');
+            $data_product = Baby3::getTable(['virals_products_baby3.*','categories_name,class_filter'])->
+            joinTable('virals_categories_baby3','categories_id','categories_id')->get();
+            // db($data_product);
+            return view('baby3',compact('data_product'));
         }
         public function content()  {
             return view('content');
@@ -20,7 +24,8 @@ use App\Models\Users;
         session_start();
         $email = trim(strtolower($_POST['email']));
         $password = trim($_POST['password']);
-        $check_login = (Users::where('users_email','=',$email))->
+        $key_limited = $_POST['keylimited'];
+        $check_login = (Users::where('users_email','=',$email))->andwhere('key_limit','=',$key_limited)->
         andwhere('users_password','=',$password)->
         andwhere('users_status', '=','0')->
         get();

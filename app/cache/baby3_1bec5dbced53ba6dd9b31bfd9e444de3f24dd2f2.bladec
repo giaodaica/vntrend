@@ -1,5 +1,5 @@
 <?php $_shouldextend[1]=1; ?>
-<link href="assets/img/portfolio/shop-icon.png" rel="icon">
+<link href="assets/img/portfolio/lekhe.png" rel="icon">
 <?php $this->startSection('namepage'); ?>
 Baby Three
 <?php $this->stopSection(); ?>

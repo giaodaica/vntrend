@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('.layout')
 <div class="main-content">
 
 <div class="page-content">
@@ -110,7 +110,7 @@
                             <div class="row g-4">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="./add_new" class="btn btn-success" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm Tin Mới</a>
+                                        <a href="./add_new_bb3" class="btn btn-success" id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Thêm Sản Phẩm</a>
                                     </div>
                                 </div>
                                 <div class="col-sm">
