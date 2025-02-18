@@ -30,7 +30,7 @@ Cửa Hàng
 
             <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                 <li data-filter="*" class="filter-active">All</li>
-                @foreach ($data_product as $render_data )
+                @foreach ($detail_categories as $render_data )
                 <li data-filter=".{{ $render_data->class_filter }}">{{ $render_data->categories_name }}</li>
                 @endforeach
             </ul><!-- End Portfolio Filters -->
@@ -38,7 +38,7 @@ Cửa Hàng
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             @foreach ($data_product as $render_data_prd )
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{$render_data->class_filter  }}">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $render_data_prd->class_filter }}">
                     <div class="portfolio-content h-100">
                         <a href="{{ 'admin/'.$render_data_prd->image }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ 'admin/'.$render_data_prd->image }}" class="img-fluid" alt="" ></a>
                         <div class="portfolio-info">

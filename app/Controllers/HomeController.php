@@ -2,6 +2,7 @@
     namespace App\Controllers;
 
 use App\Models\Baby3;
+use App\Models\Categorybb3;
 use App\Models\Users;
 
     class HomeController{
@@ -9,10 +10,12 @@ use App\Models\Users;
             return view('home');
         }
         public function shop()  {
+        $detail_categories  = Categorybb3::select();
+
             $data_product = Baby3::getTable(['virals_products_baby3.*','categories_name,class_filter'])->
             joinTable('virals_categories_baby3','categories_id','categories_id')->get();
             // db($data_product);
-            return view('baby3',compact('data_product'));
+            return view('baby3',compact('data_product','detail_categories'));
         }
         public function content()  {
             return view('content');
