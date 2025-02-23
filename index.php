@@ -13,6 +13,7 @@ $url = $_GET['url'] ?? '';
 
 $router = new RouteCollector();
 $router->get('/',[HomeController::class,'index']);
+$router->get('404',[HomeController::class,'er404']);
 
 $router->get('/babythree',[HomeController::class,'shop']);
 
@@ -41,5 +42,6 @@ try {
     // Print out the value returned from the dispatched function
     echo $response;
 } catch (\Phroute\Phroute\Exception\HttpException $ex) {
-    echo "404 Not found!";
+    header("location: 404");
+    exit();
 }

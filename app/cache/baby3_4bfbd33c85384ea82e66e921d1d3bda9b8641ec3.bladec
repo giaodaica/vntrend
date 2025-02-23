@@ -16,12 +16,21 @@ Cửa Hàng
 <?php $this->stopSection(); ?>
 
 <?php $this->startSection('content'); ?>
+ <!-- start isotope -->
+<main class="main" id="marketplace">
+
+
+<nav id="navmenu" class="">
+ <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
 <!-- Portfolio Section -->
 <section id="portfolio" class="portfolio section">
 
  <!-- Section Title -->
  <div class="container section-title" data-aos="fade-up">
  <h2>Baby Three</h2>
+ 
  </div><!-- End Section Title -->
 
  <div class="container">
@@ -31,9 +40,11 @@ Cửa Hàng
  <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
  <li data-filter="*" class="filter-active">All</li>
  <?php $__currentLoopData = $detail_categories; $this->addLoop($__currentLoopData);$this->getFirstLoop();
- foreach($__currentLoopData as $render_data): $loop = $this->incrementLoopIndices();  ?>
- <li data-filter=".<?php echo \htmlentities($render_data->class_filter??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($render_data->categories_name??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ foreach($__currentLoopData as $category): $loop = $this->incrementLoopIndices();  ?>
+ <li data-filter=".<?php echo \htmlentities($category->class_filter??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($category->categories_name??'', ENT_QUOTES, 'UTF-8', false); ?></li>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ 
+ 
  </ul><!-- End Portfolio Filters -->
 
  <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -42,22 +53,22 @@ Cửa Hàng
  foreach($__currentLoopData as $render_data_prd): $loop = $this->incrementLoopIndices();  ?>
  <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo \htmlentities($render_data_prd->class_filter??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <div class="portfolio-content h-100">
- <a href="<?php echo \htmlentities('admin/'.$render_data_prd->image??'', ENT_QUOTES, 'UTF-8', false); ?>" data-gallery="portfolio-gallery-app" class="glightbox"><img src="<?php echo \htmlentities('admin/'.$render_data_prd->image??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-fluid" alt="" ></a>
+ <a href="<?php echo \htmlentities('admin/'.$render_data_prd->image??'', ENT_QUOTES, 'UTF-8', false); ?>" data-gallery="portfolio-gallery-app" class="glightbox"><img src="<?php echo \htmlentities('admin/'.$render_data_prd->image??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-fluid" alt=""></a>
  <div class="portfolio-info">
- <h4><a href="<?php echo \htmlentities('babythree/'.$render_data_prd->slug??'', ENT_QUOTES, 'UTF-8', false); ?>" title="More Details"><?php echo \htmlentities($render_data_prd->name??'', ENT_QUOTES, 'UTF-8', false); ?></a>(<?php echo \htmlentities($render_data_prd->status == 1 ? "Còn Hàng" : "Hết Hàng"??'', ENT_QUOTES, 'UTF-8', false); ?>)</h4> 
+ <h4><a href="<?php echo \htmlentities('babythree/'.$render_data_prd->slug??'', ENT_QUOTES, 'UTF-8', false); ?>" title="More Details"><?php echo \htmlentities($render_data_prd->name??'', ENT_QUOTES, 'UTF-8', false); ?></a>(<?php echo \htmlentities($render_data_prd->status == 1 ? "Còn Hàng" : "Hết Hàng"??'', ENT_QUOTES, 'UTF-8', false); ?>)</h4>
  <p><?php echo \htmlentities($render_data_prd->title??'', ENT_QUOTES, 'UTF-8', false); ?></p>
- 
+
  <strong><?php echo \htmlentities(number_format($render_data_prd->price).' Đ'??'', ENT_QUOTES, 'UTF-8', false); ?></strong>
  </div>
  </div>
  </div><!-- End Portfolio Item -->
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div><!-- End Portfolio Container -->
-
  </div>
-
  </div>
-
 </section><!-- /Portfolio Section -->
+</main>
+
+<!-- end isotope -->
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layout'); } ?>

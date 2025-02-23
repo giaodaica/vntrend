@@ -25,6 +25,7 @@ class Database{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
+   
     public static function create($data){
         $model = new static;
         $sql = "INSERT INTO $model->table (";
@@ -73,6 +74,7 @@ class Database{
         // db($model->sql);
         return $model;
     }
+    
     public function get(){
         $stmt = $this->conn->prepare($this->sql);
         // db($stmt);
@@ -93,6 +95,12 @@ class Database{
     }
     public function andWhere($col,$opr,$val){
         $this->sql .= " AND $col $opr '$val'";
+        // db($this->sql);
+        return $this;
+    }
+    public  function limit($limit,$offset){
+       
+        $this->sql .= " limit $limit offset $offset ";
         // db($this->sql);
         return $this;
     }

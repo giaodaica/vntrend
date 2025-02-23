@@ -20,7 +20,7 @@ class Baby3Controller{
             echo "404";
             return;
         }
-        // db($detail_categories);
+        // db($detail_product);
 
         return view('detail_toy',compact('detail_product'));
     }

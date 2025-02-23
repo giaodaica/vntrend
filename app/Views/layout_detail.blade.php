@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<style>
+  .navbar-landing{
+    background-color: #292080;
+  }
+</style>
+  <meta charset="utf-8" />
   <title>@yield('title')</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+  <meta content="Themesbrand" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="{{ BASE_URL }}assets/images/favicon.ico">
 
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  <!--Swiper slider css-->
+  <link href="{{ BASE_URL }}assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,214 +24,238 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="/virals/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/virals/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/virals/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/virals/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/virals/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ BASE_URL }}assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ BASE_URL }}assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="{{ BASE_URL }}assets1/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{{ BASE_URL }}assets1/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="{{ BASE_URL }}assets1/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-   
-  <link href="/virals/assets/css/main.css" rel="stylesheet">
+  <link href="{{ BASE_URL }}assets1/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Impact
-  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Layout config Js -->
+  <script src="{{ BASE_URL }}assets/js/layout.js"></script>
+  <!-- Bootstrap Css -->
+  <link href="{{ BASE_URL }}assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Icons Css -->
+  <link href="{{ BASE_URL }}assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <!-- App Css-->
+  <link href="{{ BASE_URL }}assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  <!-- custom Css-->
+  <link href="{{ BASE_URL }}assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
 </head>
 
-<body class="starter-page-page">
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
 
-  <header id="header" class="header fixed-top">
-
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">hieu@gmail.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>0775713230</span></i>
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-    </div><!-- End Top Bar -->
-
-    <div class="branding d-flex align-items-cente">
-
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="./" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">Virals</h1>
-          <span>.</span>
+  <!-- Begin page -->
+  <div class="layout-wrapper landing">
+    <nav class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top" id="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="{{  BASE_URL  }}">
+          <img src="{{ BASE_URL }}assets/images/virals-logo.png" class="card-logo card-logo-dark" alt="logo dark" height="17">
+          <img src="{{ BASE_URL }}assets/images/virals-logo.png" class="card-logo card-logo-light" alt="logo light" height="17">
         </a>
+        <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="mdi mdi-menu"></i>
+        </button>
 
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="{{ BASE_URL }}">Trang Trủ<br></a></li>
-            <!-- <li><a href="#about">About</a></li> -->
-            <!-- <li><a href="#services">Services</a></li> -->
-            <!-- <li><a href="#portfolio">Portfolio</a></li> -->
-            <!-- <li><a href="#team">Team</a></li> -->
-            <!-- <li><a href="tintuc">Tin tức</a></li> -->
-            <li><a href="{{ BASE_URL }}babythree">Baby Three</a></li>
-
-            <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+           
+            <li class="nav-item">
+              <a class="nav-link" href="babythree">Baby Three</a>
             </li>
-             -->
-            <li><a href="contact">Liên Hệ</a></li>
-            @isset($_SESSION['user'])
-          <li><a href="{{ BASE_URL }}logout">Đăng Xuất</a></li>
-          @else
-          <li><a href="{{ BASE_URL }}login">Đăng nhập</a></li>
-          <li><a href="{{ BASE_URL }}register">Đăng ký</a></li>
-          @endisset
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+
+         
+
+        </div>
+
+        <!-- Menu Content -->
+         
+      @isset($_SESSION['user'])
+      <div class="btn-group">
+          <button type="button" class="btn btn-primary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ $_SESSION['user'] }}
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-header noti-title">
+              <h5 class="font-size-13 text-muted text-truncate mn-0">Chào bạn!</h5>
+            </div>
+            <!-- item-->
+            <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+            @isset($_SESSION['admin'])
+            <a class="dropdown-item" href="admin">Admin</a>
+            @endisset
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="logout">Đăng xuất</a>
+          </div>
+        </div>
+        @else
+        <div class="">
+            <a href="login" class="btn btn-success">Đăng Nhập</a>
+          </div>
+      @endisset
 
       </div>
+    </nav>
+    <div class="bg-overlay bg-overlay-pattern"></div>
+    <!-- end navbar -->
 
-    </div>
+    <!-- start hero section -->
+ 
 
-  </header>
+    @yield('content')
 
-  <main class="main">
+    <!-- Start footer -->
+    <footer class="custom-footer bg-dark py-5 position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mt-4">
+            <div>
+              <div>
+                <img src="{{ BASE_URL }}assets/images/virals-logo.png" alt="logo light" height="17">
+              </div>
+              <div class="mt-4">
+                <p>Premium Multipurpose Admin & Dashboard Template</p>
+                <p>You can build any type of web application like eCommerce, CRM, CMS, Project management apps, Admin Panels, etc using Velzon.</p>
+              </div>
+            </div>
+          </div>
 
-    <!-- Page Title -->
-    <div class="page-title">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>@yield('title-content')</h1>
-              <p class="mb-0">@yield('content-text')</p>
+          <div class="col-lg-7 ms-lg-auto">
+            <div class="row">
+              <div class="col-sm-4 mt-4">
+                <h5 class="text-white mb-0">Company</h5>
+                <div class="text-muted mt-3">
+                  <ul class="list-unstyled ff-secondary footer-list">
+                    <li><a href="pages-profile.html">About Us</a></li>
+                    <li><a href="pages-gallery.html">Gallery</a></li>
+                    <li><a href="apps-projects-overview.html">Projects</a></li>
+                    <li><a href="pages-timeline.html">Timeline</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-4 mt-4">
+                <h5 class="text-white mb-0">Apps Pages</h5>
+                <div class="text-muted mt-3">
+                  <ul class="list-unstyled ff-secondary footer-list">
+                    <li><a href="pages-pricing.html">Calendar</a></li>
+                    <li><a href="apps-mailbox.html">Mailbox</a></li>
+                    <li><a href="apps-chat.html">Chat</a></li>
+                    <li><a href="apps-crm-deals.html">Deals</a></li>
+                    <li><a href="apps-tasks-kanban.html">Kanban Board</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-4 mt-4">
+                <h5 class="text-white mb-0">Support</h5>
+                <div class="text-muted mt-3">
+                  <ul class="list-unstyled ff-secondary footer-list">
+                    <li><a href="pages-faqs.html">FAQ</a></li>
+                    <li><a href="pages-faqs.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row text-center text-sm-start align-items-center mt-5">
+          <div class="col-sm-6">
+
+            <div>
+              <p class="copy-rights mb-0">
+                <script>
+                  document.write(new Date().getFullYear())
+                </script> © Velzon - Themesbrand
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-sm-end mt-3 mt-sm-0">
+              <ul class="list-inline mb-0 footer-social-link">
+                <li class="list-inline-item">
+                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                    <div class="avatar-title rounded-circle">
+                      <i class="ri-facebook-fill"></i>
+                    </div>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                    <div class="avatar-title rounded-circle">
+                      <i class="ri-github-fill"></i>
+                    </div>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                    <div class="avatar-title rounded-circle">
+                      <i class="ri-linkedin-fill"></i>
+                    </div>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                    <div class="avatar-title rounded-circle">
+                      <i class="ri-google-fill"></i>
+                    </div>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="javascript: void(0);" class="avatar-xs d-block">
+                    <div class="avatar-title rounded-circle">
+                      <i class="ri-dribbble-line"></i>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="{{ BASE_URL }}">Trang Trủ</a></li>
-            <li class="current">@yield('namepage')</li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
+    </footer>
+    <!-- end footer -->
 
-    <!-- Starter Section Section -->
-    <section id="starter-section" class="starter-section section">
+    <!--start back-to-top-->
+    <!-- <button onclick="topFunction()" class="btn btn-danger btn-icon landing-back-top" id="back-to-top">
+            <i class="ri-arrow-up-line"></i>
+        </button> -->
+    <!--end back-to-top-->
 
-     @yield('content')
+  </div>
+  <!-- end layout wrapper -->
 
-    </section>
-    <!-- /Starter Section Section -->
 
-  </main>
+  <!-- JAVASCRIPT -->
+  <script src="{{ BASE_URL }}assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ BASE_URL }}assets/libs/simplebar/simplebar.min.js"></script>
+  <script src="{{ BASE_URL }}assets/libs/node-waves/waves.min.js"></script>
+  <script src="{{ BASE_URL }}assets/libs/feather-icons/feather.min.js"></script>
+  <script src="{{ BASE_URL }}assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+  <script src="{{ BASE_URL }}assets/js/plugins.js"></script>
 
-  <footer id="footer" class="footer accent-background">
+  <!--Swiper slider js-->
+  <script src="{{ BASE_URL }}assets/libs/swiper/swiper-bundle.min.js"></script>
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="./" class="logo d-flex align-items-center">
-            <span class="sitename">Virals</span>
-          </a>
-          <p>No Problem</p>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
+  <script src="{{ BASE_URL }}assets/js/pages/nft-landing.init.js"></script>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center bg-danger"><i class="bi bi-arrow-up-short"></i></a>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Điều Khiển</h4>
-          <ul>
-            <li><a href="#">Trang Trủ</a></li>
-            <!-- <li><a href="#">About us</a></li> -->
-            <!-- <li><a href="#">Services</a></li> -->
-            <!-- <li><a href="#">Terms of service</a></li> -->
-            <!-- <li><a href="#">Privacy policy</a></li> -->
-          </ul>
-        </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Dịch Vụ</h4>
-          <ul>
-            <li><a href="#">Sắp ra mắt</a></li>
-            <!-- <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li> -->
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Liên Hệ</h4>
-          
-
-          <p class="mt-4"><strong>Zalo:</strong> <span>0775713230</span></p>
-          <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>No Copyright</span> <strong class="px-1 sitename">Virals</strong></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="/virals/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/virals/assets/vendor/php-email-form/validate.js"></script>
-  <script src="/virals/assets/vendor/aos/aos.js"></script>
-  <script src="/virals/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/virals/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/virals/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="/virals/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="/virals/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="{{ BASE_URL }}assets1/vendor/aos/aos.js"></script>
+  <script src="{{ BASE_URL }}assets1/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="{{ BASE_URL }}assets1/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="{{ BASE_URL }}assets1/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="{{ BASE_URL }}assets1/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="{{ BASE_URL }}assets1/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="/virals/assets/js/main.js"></script>
-
+  <script src="{{ BASE_URL }}assets1/js/main.js"></script>
 </body>
 
 </html>
