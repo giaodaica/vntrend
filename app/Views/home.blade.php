@@ -47,10 +47,16 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>0775713230</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          @isset($_SESSION['user'])
+      <div style="color: white;">
+      {{ "Xin Chào " . $_SESSION['user'] }}
+      </div>
+          @endisset
+          @isset($_SESSION['admin'] )
+      <div style="color: white;">
+      <a href="admin">Admin</a>
+      </div>
+          @endisset
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -72,8 +78,8 @@
             <!-- <li><a href="#services">Services</a></li> -->
             <!-- <li><a href="#portfolio">Portfolio</a></li> -->
             <!-- <li><a href="#team">Team</a></li> -->
-            <!-- <li><a href="tintuc">Tin Tức</a></li> -->
             <li><a href="babythree">Baby Three</a></li>
+
 <!--             
             <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
@@ -94,6 +100,14 @@
             </li> -->
 
             <li><a href="contact">Liên Hệ</a></li>
+            @isset($_SESSION['user'])
+          <li><a href="logout">Đăng Xuất</a></li>
+          @else
+          <li><a href="login">Đăng nhập</a></li>
+          <li><a href="register">Đăng ký</a></li>
+
+          @endisset
+
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

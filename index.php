@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/app/helpers/handler.php';
 require_once __DIR__ .'/commons/env.php';
@@ -19,7 +20,10 @@ $router->get('/babythree/{id}/',[Baby3Controller::class,'baby3_details']);
 
 $router->get('/tintuc',[HomeController::class,'content']);
 
-$router->get('/login_admin',[HomeController::class,'login_admin']);
+$router->get('/login',[HomeController::class,'login']);
+$router->get('/logout',[HomeController::class,'logout']);
+$router->get('/register',[HomeController::class,'register']);
+$router->post('/check_register',[HomeController::class,'check_register']);
 
 $router->POST('check_login_admin',[HomeController::class,'check_admin']);
 

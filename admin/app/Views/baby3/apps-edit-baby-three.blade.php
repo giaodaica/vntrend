@@ -27,24 +27,24 @@ Thêm Mới Sản Phẩm
             </div>
             <!-- end page title -->
 
-            <form action="sucsess-new-product-bb3" method="post" id="createproduct-form" autocomplete="off" class="needs-validation" enctype="multipart/form-data" novalidate>
+            <form action="{{ BASE_URL_ADMIN }}babythree/sucsess-edit-product-bb3/{{ $data_product_bb3->id }}" method="post" id="createproduct-form" autocomplete="off" class="needs-validation" enctype="multipart/form-data" novalidate>
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label class="form-label" for="product-title-input">Tên Sản Phẩm</label>
-                                    <input type="text" class="form-control" id="product-title-input" value="{{ $data['name'] }}" placeholder="Nhập tiêu đề tin" required name="name">
+                                    <input type="text" class="form-control" id="product-title-input" value="{{ $data_product_bb3->name }}" placeholder="Nhập tiêu đề tin" required name="name">
                                     @isset($error)
                                     <p class="text-danger">{{ $error['name'] }}</p>
                                     @endisset
                                     <label class="form-label" for="product-title-input">Giá</label>
-                                    <input type="text" class="form-control" id="product-title-input" value="{{ $data['price'] }}" placeholder="Nhập tiêu đề tin" required name="price">
+                                    <input type="text" class="form-control" id="product-title-input" value="{{ $data_product_bb3->price }}" placeholder="Nhập tiêu đề tin" required name="price">
                                     @isset($error)
                                     <p class="text-danger">{{ $error['price'] }}</p>
                                     @endisset
                                     <label class="form-label" for="product-title-input">Tiêu Đề</label>
-                                    <input type="text" class="form-control" id="product-title-input" value="{{ $data['title'] }}" placeholder="Nhập tiêu đề tin" required name="title">
+                                    <input type="text" class="form-control" id="product-title-input" value="{{ $data_product_bb3->title }}" placeholder="Nhập tiêu đề tin" required name="title">
                                     @isset($error)
                                     <p class="text-danger">{{ $error['title'] }}</p>
                                     @endisset
@@ -71,7 +71,7 @@ Thêm Mới Sản Phẩm
                                                         </div>
                                                     </div>
                                                 </label>
-                                                <input class="form-control d-none" value="" id="product-image-input" type="file" accept="image/png, image/gif, image/jpeg" name="image">
+                                                <input class="form-control d-none" name="image" value="{{ $data_product_bb3->image }}" id="product-image-input" type="file" accept="image/png, image/gif, image/jpeg, image/jpg" >
                                             </div>
                                             <div class="avatar-lg">
                                                 <div class="avatar-title bg-light rounded">
@@ -79,6 +79,11 @@ Thêm Mới Sản Phẩm
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="avatar-lg">
+                                                <div class="avatar-title bg-light rounded">
+                                                    <img src="{{ BASE_URL_ADMIN.$data_product_bb3->image }}" id="product-img" class="avatar-md h-auto" />
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
 
@@ -118,14 +123,14 @@ Thêm Mới Sản Phẩm
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="manufacturer-name-input">Slug</label>
-                                                    <input type="text" class="form-control" value="{{ $data['slug'] }}" id="manufacturer-name-input" placeholder="Đường dẫn thân thiện" name="slug">
+                                                    <input type="text" class="form-control" value="{{ $data_product_bb3->slug }}" id="manufacturer-name-input" placeholder="Đường dẫn thân thiện" name="slug">
                                                     @isset($error)
                                     <p class="text-danger">{{ $error['slug'] }}</p>
                                     @endisset
                                                 </div>
                                                 <div>
                                                     <label class="form-label" for="meta-description-input">Mô tả</label>
-                                                    <textarea class="form-control" id="meta-description-input"  placeholder="Nhập mô tả cho sản phẩm" rows="10" name="content">{{ $data['content'] }}</textarea>
+                                                    <textarea class="form-control" id="meta-description-input"  placeholder="Nhập mô tả cho sản phẩm" rows="10" name="content">{{ $data_product_bb3->content }}</textarea>
                                                     @isset($error)
                                     <p class="text-danger">{{ $error['content'] }}</p>
                                     @endisset
@@ -202,10 +207,10 @@ Thêm Mới Sản Phẩm
                                 <h5 class="card-title mb-0">Danh Mục</h5>
                             </div>
                             <div class="card-body">
-                                <p class="text-muted mb-2"> <a href="{{ BASE_URL_ADMIN."babythree/categories/add_new_cate_bb3" }}" class="float-end text-decoration-underline">Thêm mới danh mục</a>Lựa chọn danh mục</p>
-                                <select class="form-select" id="choices-category-input" name="categories_id" data-choices data-choices-search-false>
+                                <p class="text-muted mb-2"> <a href="" class="float-end text-decoration-underline">Thêm mới danh mục</a>Lựa chọn danh mục</p>
+                                <select class="form-select" id="choices-category-input" name="id" data-choices data-choices-search-false>
                                     @foreach ($data_categories_bb3 as $render_cate )
-                                    <option value="{{ $render_cate->id }}">{{ $render_cate->categories_name }}</option>
+                                    <option value="{{ $render_cate->id }}" @selected($render_cate->id == $data_product_bb3->id)>{{ $render_cate->categories_name }}</option>
 
                                     @endforeach
                                 </select>

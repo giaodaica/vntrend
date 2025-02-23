@@ -1,5 +1,9 @@
 <?php
 namespace Admin\App\Controllers;
+
+use Admin\App\Models\Categories_baby3;
+use Admin\App\Models\Product_baby3;
+
 class Dashboard{
     public function index(){
         return view('home');
@@ -17,7 +21,9 @@ class Dashboard{
         return view('apps-add-category');
     }
     public function babythree(){
-        return view('baby3.apps-baby-three');
+        $data_products = Product_baby3::getTable(['virals_products_baby3.*','categories_name'])->
+        joinTable('virals_categories_baby3','categories_id','id')->get();
+        return view('baby3.apps-baby-three',compact('data_products'));
     }
     public function sucsess_new_categories(){
         echo "ok";

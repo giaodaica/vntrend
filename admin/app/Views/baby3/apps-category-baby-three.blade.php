@@ -1,6 +1,6 @@
 @extends('.layout')
 @section('title')
-Baby Three
+Danh Mục Sản Phẩm Baby Three
 @endsection
 <div class="main-content">
 
@@ -13,12 +13,12 @@ Baby Three
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Products</h4>
+                    <h4 class="mb-sm-0">Danh Mục Sản Phẩm</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                            <li class="breadcrumb-item active">Products</li>
+                            <li class="breadcrumb-item active">Danh Mục Sản Phẩm</li>
                         </ol>
                     </div>
 
@@ -39,14 +39,14 @@ Baby Three
                                         <div class="row g-4 mb-3">
                                             <div class="col-sm-auto d-flex gap-5">
                                                 <div class="">
-                                                    <a href="babythree/add_new_bb3">
-                                                    <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Thêm mới sản phẩm</button>
+                                                    <a href="{{ BASE_URL_ADMIN }}babythree/categories/add_new_cate_bb3">
+                                                    <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Thêm mới danh mục</button>
                                                     </a>
                                                     <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
                                                 </div>
                                                 <div>
-                                                    <a href="babythree/categories">
-                                                    <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Danh Mục Sản Phẩm</button>
+                                                    <a href="{{ BASE_URL_ADMIN }}babythree">
+                                                    <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Danh sách Sản Phẩm</button>
                                                     </a>
                                                 </div>
                                             </div>
@@ -69,17 +69,13 @@ Baby Three
                                                                 <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                             </div>
                                                         </th>
-                                                        <th class="sort" data-sort="customer_name">Tên Sản Phẩm</th>
-                                                        <th class="sort" data-sort="customer_name">Danh Mục</th>
-                                                        <th class="sort" data-sort="email">Giá</th>
-                                                        <th class="sort" data-sort="phone">Ảnh</th>
-                                                        <th class="sort" data-sort="date">Slug</th>
-                                                        <th class="sort" data-sort="status">Trạng Thái</th>
+                                                        <th class="sort" data-sort="customer_name">Tên Danh Mục</th>
+                                                        <th class="sort" data-sort="status">Key Filter</th>
                                                         <th class="sort" data-sort="action">Hành Động</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="list form-check-all">
-                                                @foreach ($data_products as $renderProduct )
+                                                @foreach ($data_categori as $renderCate )
                                                 <tr>
                                                         <th scope="row">
                                                             <div class="form-check">
@@ -87,27 +83,23 @@ Baby Three
                                                             </div>
                                                         </th>
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                        <td class="customer_name">{{ $renderProduct->name }}</td>
-                                                        <td class="customer_name">{{ $renderProduct->categories_name }}</td>
-                                                        <td class="email">{{ $renderProduct->price }}</td>
-                                                        <td class="phone"><img src="{{ $renderProduct->image }}" alt="" width="100"></td>
-                                                        <td class="date">{{ $renderProduct->slug }}</td>
-                                                        <td class="status"><span class="badge bg-success-subtle text-success text-uppercase">{{ $renderProduct->status == 1 ? "Còn hàng" : "Hết hàng" }}</span></td>
+                                                        <td class="customer_name">{{ $renderCate->categories_name }}</td>
+                                                        <td class="customer_name">{{ $renderCate->class_filter }}</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <div class="edit">
-                                                                    <a href="{{ BASE_URL_ADMIN."babythree/edit/".$renderProduct->id }}">
+                                                                    <a href="{{ BASE_URL_ADMIN."babythree/categories/edit/".$renderCate->id }}">
                                                                     <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-edit-2-fill"></i></button>
                                                                     </a>
                                                                 </div>
                                                                 <div class="remove">
-                                                                   <form action="{{ BASE_URL_ADMIN."babythree/delete/".$renderProduct->id }}" method="post">
+                                                                   <form action="{{ BASE_URL_ADMIN."babythree/categories/delete/".$renderCate->id }}" method="post">
                                                                    <button onclick="return confirm('Bạn muốn xóa sản phẩm này?')" class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"> <i class="ri-delete-bin-fill"></i></button>
                                                                 </form>
                                                                 </div>
-                                                                <div class="detail">
-                                                                  <a href="{{ BASE_URL_ADMIN."babythree/detail/".$renderProduct->id }}">  <button class="btn btn-sm btn-info remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Chi tiết</button></a>
-                                                                </div>
+                                                                <!-- <div class="detail">
+                                                                  <a href="{{ BASE_URL_ADMIN."babythree/detail/".$renderCate->id }}">  <button class="btn btn-sm btn-info remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Chi tiết</button></a>
+                                                                </div> -->
                                                             </div>
                                                         </td>
                                                     </tr>

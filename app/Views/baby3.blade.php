@@ -42,8 +42,9 @@ Cửa Hàng
                     <div class="portfolio-content h-100">
                         <a href="{{ 'admin/'.$render_data_prd->image }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ 'admin/'.$render_data_prd->image }}" class="img-fluid" alt="" ></a>
                         <div class="portfolio-info">
-                            <h4><a href="{{ 'babythree/'.$render_data_prd->slug }}" title="More Details">{{ $render_data_prd->name }}</a></h4>
+                            <h4><a href="{{ 'babythree/'.$render_data_prd->slug }}" title="More Details">{{ $render_data_prd->name }}</a>({{ $render_data_prd->status == 1 ? "Còn Hàng" : "Hết Hàng" }})</h4> 
                             <p>{{ $render_data_prd->title }}</p>
+                            
                             <strong>{{ number_format($render_data_prd->price).' Đ' }}</strong>
                         </div>
                     </div>

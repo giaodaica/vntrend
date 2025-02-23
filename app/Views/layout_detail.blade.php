@@ -68,13 +68,13 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="./">Trang Trủ<br></a></li>
+            <li><a href="{{ BASE_URL }}">Trang Trủ<br></a></li>
             <!-- <li><a href="#about">About</a></li> -->
             <!-- <li><a href="#services">Services</a></li> -->
             <!-- <li><a href="#portfolio">Portfolio</a></li> -->
             <!-- <li><a href="#team">Team</a></li> -->
             <!-- <li><a href="tintuc">Tin tức</a></li> -->
-            <li><a href="babythree">Baby Three</a></li>
+            <li><a href="{{ BASE_URL }}babythree">Baby Three</a></li>
 
             <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
@@ -95,6 +95,12 @@
             </li>
              -->
             <li><a href="contact">Liên Hệ</a></li>
+            @isset($_SESSION['user'])
+          <li><a href="{{ BASE_URL }}logout">Đăng Xuất</a></li>
+          @else
+          <li><a href="{{ BASE_URL }}login">Đăng nhập</a></li>
+          <li><a href="{{ BASE_URL }}register">Đăng ký</a></li>
+          @endisset
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -180,7 +186,8 @@
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Liên Hệ</h4>
-        
+          
+
           <p class="mt-4"><strong>Zalo:</strong> <span>0775713230</span></p>
           <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
         </div>

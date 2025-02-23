@@ -13,7 +13,7 @@ class Baby3Controller{
   
     public function baby3_details($id){
         $detail_product = Baby3::getTable(['virals_products_baby3.*','categories_name,class_filter'])->
-        joinTable('virals_categories_baby3','categories_id','categories_id')->
+        joinTable('virals_categories_baby3','categories_id','id')->
         andwhere('slug','=',$id)->
         first();
         if(!$detail_product){

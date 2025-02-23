@@ -46,15 +46,16 @@ class Database{
             $sql .= "`$col` = :$col, ";
         }
         $sql = rtrim($sql,', '). " WHERE $model->prmkey = :id";
-        // db($sql);
+        // dd($sql);
         $data[$model->prmkey] = $id;
         $stmt = $model->conn->prepare($sql);
+        
         $stmt->execute($data);
     }
     public static function delete($id){
         $model = new static;
         $sql = "DELETE FROM $model->table WHERE $model->prmkey = :$model->prmkey";
-        // db($sql);
+        // dd($sql);
         $stmt = $model->conn->prepare($sql);
         $stmt->execute(["$model->prmkey" => $id]);
     }
