@@ -55,10 +55,10 @@ class HomeController
         $email = $data['users_email'];
         $password = $data['users_password'];
 
-        if ($email == "") {
+        if (trim($email) == "") {
             $error['email'] = "Địa chỉ email không được để trống";
         }
-        if ($password == "") {
+        if (trim($password) == "") {
             $error['password'] = "Mật khẩu không được để trống";
         }
         if (isset($error)) {
@@ -80,6 +80,9 @@ class HomeController
                         header("location: " . BASE_URL);
                         break;
                 }
+            }else{
+            $error['msg'] = "Địa chỉ email hoặc mật khẩu không chính xác";
+            return view('login_admin', compact('error'));
             }
         } else {
             $error['msg'] = "Địa chỉ email hoặc mật khẩu không chính xác";

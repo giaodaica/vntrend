@@ -88,6 +88,11 @@
                                                 <div class="mb-3">
                                                     <label for="username" class="form-label">Email</label>
                                                     <input type="text" class="form-control" name="users_email" id="username" placeholder="Enter username">
+                                                    <span class="text-danger">
+                                                        @isset($error)
+                                                                {{ $error['email'] }}
+                                                        @endisset
+                                                    </span>
                                                 </div>
 
                                                 <div class="mb-3">
@@ -98,6 +103,11 @@
                                                     <div class="position-relative auth-pass-inputgroup mb-3">
                                                         <input type="password" name="users_password" class="form-control pe-5 password-input" placeholder="Enter password" id="password-input">
                                                         <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                        <span class="text-danger">
+                                                        @isset($error)
+                                                                {{ $error['password'] }}
+                                                        @endisset
+                                                    </span>
                                                     </div>
                                                 </div>
 
@@ -105,7 +115,11 @@
                                                     <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
                                                     <label class="form-check-label" for="auth-remember-check">Remember me</label>
                                                 </div>
-
+                                                <span class="text-danger">
+                                                        @isset($error)
+                                                                {{ $error['msg'] }}
+                                                        @endisset
+                                                    </span>
                                                 <div class="mt-4">
                                                     <button class="btn btn-success w-100" type="submit">Đăng Nhập</button>
                                                 </div>

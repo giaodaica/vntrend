@@ -68,12 +68,15 @@ class Database{
         $data = $stmt->fetchAll(PDO::FETCH_CLASS);
         return $data[0] ?? [];
     }
-    public static function where($col,$opr,$val){
+    public static function where($col, $opr, $val){
         $model = new static;
-        $model->sql = "SELECT * FROM $model->table WHERE $col $opr '$val'";
-        // db($model->sql);
+        $model->sql = "SELECT * FROM $model->table WHERE $col $opr :val";
+        $stmt = $model->conn->prepare($model->sql);
+        $stmt->bindParam(':val', $val, PDO::PARAM_STR);
+        $stmt->execute();
         return $model;
     }
+    
     
     public function get(){
         $stmt = $this->conn->prepare($this->sql);
